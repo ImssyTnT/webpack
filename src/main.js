@@ -3,7 +3,6 @@ import './tabs';
 // import './style/style.css';
 import './style/style.less';
 import './assets/fonts/iconfont.css';
-
 import imgUrl from './assets/logo_small.png';
 const img = document.createElement('img');
 img.src = imgUrl;

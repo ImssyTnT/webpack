@@ -52,6 +52,18 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.eot|svg|ttf|woff|woff2$/,
+        type: 'asset',
+        generator: {
+          filename: 'fonts/font-[name][ext]',
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 1 * 1024,
+          },
+        },
+      },
     ],
   },
 };
