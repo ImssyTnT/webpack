@@ -14,10 +14,10 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
-    devServer: {
-      open: true,
-      port: 3000,
-    },
+  devServer: {
+    open: true,
+    port: 3000,
+  },
   module: {
     rules: [
       {
@@ -65,6 +65,16 @@ module.exports = {
         parser: {
           dataUrlCondition: {
             maxSize: 1 * 1024,
+          },
+        },
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
           },
         },
       },

@@ -12,3 +12,12 @@ import imgUrl1 from './assets/1.gif';
 const img1 = document.createElement('img');
 img1.src = imgUrl1;
 document.body.appendChild(img1);
+
+class App {
+  static a = 123;
+}
+console.log(App.a);
+
+const b = () => {
+  console.log(123);
+};
