@@ -14,6 +14,10 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+    devServer: {
+      open: true,
+      port: 3000,
+    },
   module: {
     rules: [
       {
@@ -42,7 +46,7 @@ module.exports = {
         test: /\.png|jpg|gif/,
         type: 'asset',
         generator: {
-          filename: '[hash:6][ext]',
+          filename: 'images/[hash:6][ext]',
         },
         parser: {
           // dataUrl 的状态
