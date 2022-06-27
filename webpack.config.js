@@ -27,7 +27,7 @@ module.exports = {
       //   图片加载器
       // webpack4
       {
-        test: /\.png|jpg|gif/,
+        test: /\.png|jpg|gif$/,
         use: [
           {
             loader: 'url-loader',
@@ -36,6 +36,18 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.eot|svg|ttf|woff|woff2$/,
+        type: 'asset',
+        generator: {
+          filename: 'fonts/font-[name][ext]',
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 1 * 1024,
+          },
+        },
       },
     ],
   },
