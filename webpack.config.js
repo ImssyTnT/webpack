@@ -7,4 +7,12 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js',
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 };
