@@ -24,6 +24,19 @@ module.exports = {
         test: /\.less$/,
         use: ['style-loader', 'css-loader', 'less-loader'],
       },
+      //   图片加载器
+      // webpack4
+      {
+        test: /\.png|jpg|gif/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 2 * 1024,
+            },
+          },
+        ],
+      },
     ],
   },
 };
