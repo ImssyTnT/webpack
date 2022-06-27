@@ -21,3 +21,5 @@ console.log(App.a);
 const b = () => {
   console.log(123);
 };
+
+import vue from './App.vue';

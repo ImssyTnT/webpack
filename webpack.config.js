@@ -1,6 +1,8 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
+
 module.exports = {
   mode: 'development',
   entry: './src/main.js',
@@ -13,6 +15,7 @@ module.exports = {
       template: './public/index.html',
     }),
     new CleanWebpackPlugin(),
+    new VueLoaderPlugin(),
   ],
   devServer: {
     open: true,
@@ -77,6 +80,10 @@ module.exports = {
             presets: ['@babel/preset-env'],
           },
         },
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
       },
     ],
   },
