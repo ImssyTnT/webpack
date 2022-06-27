@@ -26,16 +26,31 @@ module.exports = {
       },
       //   图片加载器
       // webpack4
+      //   {
+      //     test: /\.png|jpg|gif/,
+      //     use: [
+      //       {
+      //         loader: 'url-loader',
+      //         options: {
+      //           limit: 2 * 1024,
+      //         },
+      //       },
+      //     ],
+      //   },
+      // webpack5
       {
         test: /\.png|jpg|gif/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 2 * 1024,
-            },
+        type: 'asset',
+        generator: {
+          filename: '[hash:6][ext]',
+        },
+        parser: {
+          // dataUrl 的状态
+          dataUrlCondition: {
+            // 图片最大尺寸
+            maxSize: 2 * 1024,
           },
-        ],
+        },
       },
     ],
   },
